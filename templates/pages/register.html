@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content  %}
+	<div>
+        <h2>Welcome Here, Register Here......</h2>
+        <form  method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="Username" name = username>
+            <input type="text" placeholder="email" name = "email">
+            <input type="text" placeholder="Phone Number" name = "mobile_no">
+            <input type="password" placeholder="Password" name = "password">
+           
+            <button type = "submit">Register</button>
+        </form>
+        <p>Allready have account, <a href="{% url 'login' %}">login</a> here.....</p>
+    </div>
+{% endblock %}

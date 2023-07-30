@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'js/for.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'style/main.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div >
+        <h1>Welcome here</h1>
+        <div>
+            <span> 
+                <a href="{% url 'home' %}">Home</a>
+            </span>
+            {% if not user.is_authenticated %}
+                <span> 
+                    <a href="{% url 'login' %}">Login</a>
+                </span>
+           
+            {% else %}
+                <span> 
+                    <a href="{% url 'logout' %}">Logout</a>
+                </span>
+            {% endif %}
+            <span>
+                <a href="{% url 'register' %}">Register</a> 
+            </span>
+        </div>
+        
+    </div>
+    
+        {% block content %}
+        
+        {% endblock %} 
+    
+</body>
+
+</html>

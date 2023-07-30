@@ -1,0 +1,17 @@
+{% extends "pages/home.html" %}
+
+
+{% block addcontact  %}
+	<div>
+        
+        <h3>Add contacts </h3>
+        <form method="POST">
+            {% csrf_token %}
+            <input name ="mobile_no"type="text" placeholder="Enter Phone Number">
+            <input name ="username"type="text" placeholder="Enter Name">
+            <input name ="email_id"type="text" placeholder="Enter Email ID">
+            <button type = "submit">Add</button>
+        </form>
+        
+    </div>
+{% endblock %}
