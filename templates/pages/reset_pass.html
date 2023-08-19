@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content  %}
+	<div>
+        <h2>Reset Your Password......</h2>
+        <form  method="POST" action = "{% url 'reset' %}">
+            {% csrf_token %}
+            <input type="text" placeholder="email" name = "email">
+            <input type="password" placeholder="Password" name = "password1">
+            <input type="password" placeholder="Conform Password" name = "password2">
+           
+            <button type = "submit">Reset</button>
+        </form>
+        <p>Allready have account, <a href="{% url 'login' %}">login</a> here.....</p>
+    </div>
+{% endblock %}

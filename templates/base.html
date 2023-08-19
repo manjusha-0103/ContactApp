@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="{% static 'js/for.js' %}"></script>
     <link rel="stylesheet" href="{% static 'style/main.css' %}">
-    <title>Document</title>
+    <title>LeTyOuKnOw.com</title>
 </head>
 
 <body>
@@ -24,6 +24,7 @@
             {% else %}
                 <span> 
                     <a href="{% url 'logout' %}">Logout</a>
+                    <a href="{% url 'reset' %}">Reset Password</a>
                 </span>
             {% endif %}
             <span>
@@ -32,11 +33,17 @@
         </div>
         
     </div>
-    
-        {% block content %}
+    {% block content %}
         
-        {% endblock %} 
-    
+    {% endblock %} 
+
+    {% block addcontact %}
+            
+    {% endblock %} 
+
+        
+
+        
 </body>
 
 </html>

@@ -1,17 +1,37 @@
 {% extends "base.html" %}
 
 {% load static %}
+
 {% block content  %}
-
-    {% block addcontact  %}
-
-    {% endblock %}
+    <!--<div>
+        <h3>Add contacts </h3>
+        <form  id = "contacts" method="POST">
+            {% csrf_token %}
+            <input name ="mobile_no"type="text" placeholder="Enter Phone Number">
+            <input name ="username"type="text" placeholder="Enter Name">
+            <input name ="email_id"type="text" placeholder="Enter Email ID">
+            <button type = "submit">Add</button>
+        </form>
+        
+    </div> -->
+    <div>
+        <h3>Add contacts </h3>
+        <form method="POST" action = "{% url 'add' %}" >
+            {% csrf_token %}
+            <input name ="mobile_no"type="text" placeholder="Enter Phone Number">
+            <input name ="username"type="text" placeholder="Enter Name">
+            <input name ="email_id"type="text" placeholder="Enter Email ID">
+            <button type = "submit">Add</button>
+        </form>
+        
+    </div>
 	<div>
         <h3>Search Contact......</h3>
-        <form method="POST">
+        <form id = "search" method="POST" action="{% url 'search' %}">
             {% csrf_token %}
             <input type="text" placeholder="Enter Phone Number or Name"name = "query"/>
             <button type = "submit">Search</button>
         </form>
     </div>
 {% endblock %}
+

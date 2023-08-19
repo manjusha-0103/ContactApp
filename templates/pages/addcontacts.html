@@ -1,9 +1,6 @@
-{% extends "pages/home.html" %}
-
 
 {% block addcontact  %}
 	<div>
-        
         <h3>Add contacts </h3>
         <form method="POST">
             {% csrf_token %}
@@ -14,4 +11,4 @@
         </form>
         
     </div>
-{% endblock %}
+{% endblock addcontact %}
